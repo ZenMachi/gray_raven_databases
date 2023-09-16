@@ -23,7 +23,7 @@ class MainScreenMobile extends StatelessWidget {
               Text('Characters', style: Theme.of(context).textTheme.titleLarge),
               SizedBox(height: 2.h,),
               SizedBox(
-                width: MediaQuery.of(context).size.width,
+                width: 100.w,
                 child: Wrap(
                   alignment: WrapAlignment.spaceAround,
                   runSpacing: 24,

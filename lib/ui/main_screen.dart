@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gray_raven_databases/ui/main_screen/main_screen_mobile.dart';
+import 'package:gray_raven_databases/ui/main_screen/main_screen_web.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -7,7 +8,7 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MainScreenMobile(),
+      body: MainScreenWeb(),
     );
   }
 }

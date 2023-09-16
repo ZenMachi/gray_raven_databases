@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class ElementBadge extends StatefulWidget {
+class ElementBadge extends StatelessWidget {
   const ElementBadge({super.key, required this.element});
   final String element;
 
-  @override
-  State<ElementBadge> createState() => _ElementBadgeState();
-}
-
-class _ElementBadgeState extends State<ElementBadge> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,18 +16,17 @@ class _ElementBadgeState extends State<ElementBadge> {
       child: Row(
         children: [
           Image.asset(
-            getElementType(widget.element),
+            getElementType(element),
             height: 30,
             width: 30,),
           SizedBox(width: 2.w,),
-          Text(widget.element,
+          Text(element,
             style: Theme.of(context).textTheme.bodyMedium?.apply(color: Theme.of(context).colorScheme.onTertiary),)
         ],
       ),
     );
   }
 }
-
 
 String getElementType(String element) {
   if (element == 'Physical') {

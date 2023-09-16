@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CardInformation extends StatefulWidget {
-  const CardInformation({super.key, required this.info});
+class CardInformation extends StatelessWidget {
+  const CardInformation({super.key, required this.info, required this.width});
   final String info;
+  final double width;
 
-  @override
-  State<CardInformation> createState() => _CardInformationState();
-}
-
-class _CardInformationState extends State<CardInformation> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -21,6 +17,7 @@ class _CardInformationState extends State<CardInformation> {
           )
       ),
       child: Container(
+        width: width,
         padding: EdgeInsets.all(24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,7 +25,7 @@ class _CardInformationState extends State<CardInformation> {
             Text('Information',
               style: Theme.of(context).textTheme.titleLarge?.apply(color: Theme.of(context).colorScheme.onTertiaryContainer),),
             SizedBox(height: 4,),
-            Text(widget.info,
+            Text(info,
               style: Theme.of(context).textTheme.bodyMedium?.apply(color: Theme.of(context).colorScheme.onTertiaryContainer),)
           ],
         ),

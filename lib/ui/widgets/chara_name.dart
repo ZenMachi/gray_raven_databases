@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CharaName extends StatefulWidget {
+class CharaName extends StatelessWidget {
   const CharaName({super.key, required this.name, required this.variant});
   final String name;
   final String variant;
 
-  @override
-  State<CharaName> createState() => _CharaNameState();
-}
-
-class _CharaNameState extends State<CharaName> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -21,7 +16,7 @@ class _CharaNameState extends State<CharaName> {
           ),
           child: Container(
             margin: EdgeInsets.all(8),
-            child: Text(widget.name,
+            child: Text(name,
               style: Theme.of(context).textTheme.titleLarge?.apply(color: Theme.of(context).colorScheme.onPrimaryContainer),),
           ),
         ),
@@ -33,7 +28,7 @@ class _CharaNameState extends State<CharaName> {
           ),
           child: Container(
             padding: EdgeInsets.all(8),
-            child: Text(widget.variant,
+            child: Text(variant,
               style: Theme.of(context).textTheme.titleLarge?.apply(color: Theme.of(context).colorScheme.onPrimaryContainer),),
           ),
         ),

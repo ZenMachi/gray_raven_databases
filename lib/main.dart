@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => Sizer(builder: (context, orientation, deviceType) =>
        MaterialApp(
          debugShowCheckedModeBanner: false,
-        // themeMode: ThemeMode.light,
+        themeMode: ThemeMode.light,
         title: 'Flutter Demo',
         darkTheme: ThemeData(
           colorScheme: darkColorScheme,
