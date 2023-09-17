@@ -8,7 +8,16 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MainScreenWeb(),
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      body: LayoutBuilder (
+        builder: (BuildContext context, BoxConstraints constraints) {
+          if (constraints.maxWidth < 1024) {
+            return MainScreenMobile();
+          } else {
+            return MainScreenWeb();
+          }
+        }
+      )
     );
   }
 }

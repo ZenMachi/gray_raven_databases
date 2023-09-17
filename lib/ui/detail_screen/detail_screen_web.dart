@@ -25,7 +25,7 @@ class _DetailScreenWebState extends State<DetailScreenWeb> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('GRAY RAVEN DATABASES', style: Theme.of(context).textTheme.displayMedium,),
+              Text('GRAY RAVEN DATABASES', style: Theme.of(context).textTheme.displayMedium?.apply(color: Theme.of(context).colorScheme.onSurface),),
               SizedBox(height: 4.h,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -49,7 +49,7 @@ class _DetailScreenWebState extends State<DetailScreenWeb> {
                           CardImage(imagePath: widget.chara.image, width: 30.w, height: 40.h),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: FavoriteButton(name: widget.chara.name, buttonSize: 36),
+                            child: FavoriteButton(name: '${widget.chara.name} ${widget.chara.variant}', buttonSize: 36),
                           )
                         ],
                       )

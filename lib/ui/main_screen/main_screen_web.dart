@@ -5,8 +5,14 @@ import '../../data/local/data_dummy.dart';
 import '../detail_screen.dart';
 import '../widgets/card_image.dart';
 
-class MainScreenWeb extends StatelessWidget {
-  MainScreenWeb({super.key});
+class MainScreenWeb extends StatefulWidget {
+  const MainScreenWeb({super.key});
+
+  @override
+  State<MainScreenWeb> createState() => _MainScreenWebState();
+}
+
+class _MainScreenWebState extends State<MainScreenWeb> {
   final _scrollController = ScrollController();
 
   @override
@@ -19,12 +25,12 @@ class MainScreenWeb extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('GRAY RAVEN DATABASES', style: Theme.of(context).textTheme.displayMedium,),
+                Text('GRAY RAVEN DATABASES', style: Theme.of(context).textTheme.displayMedium?.apply(color: Theme.of(context).colorScheme.onSurface),),
                 SizedBox(height: 48,),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('Characters', style: Theme.of(context).textTheme.headlineLarge),
+                    Text('Characters', style: Theme.of(context).textTheme.headlineLarge?.apply(color: Theme.of(context).colorScheme.onSurface),),
                     SizedBox(height: 48,),
                     Scrollbar(
                       controller: _scrollController,
@@ -52,5 +58,11 @@ class MainScreenWeb extends StatelessWidget {
           )
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
   }
 }

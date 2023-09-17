@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:gray_raven_databases/data/local/data_dummy.dart';
 import 'package:gray_raven_databases/ui/detail_screen.dart';
 import 'package:gray_raven_databases/ui/widgets/card_image.dart';
-import 'package:gray_raven_databases/utils/utils.dart';
 import 'package:sizer/sizer.dart';
 
 class MainScreenMobile extends StatelessWidget {
@@ -18,9 +16,9 @@ class MainScreenMobile extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('GRAY RAVEN\nDATABASES', style: Theme.of(context).textTheme.displaySmall,),
+              Text('GRAY RAVEN\nDATABASES', style: Theme.of(context).textTheme.displaySmall?.apply(color: Theme.of(context).colorScheme.onSurface),),
               SizedBox(height: 4.h,),
-              Text('Characters', style: Theme.of(context).textTheme.titleLarge),
+              Text('Characters', style: Theme.of(context).textTheme.titleLarge?.apply(color: Theme.of(context).colorScheme.onSurface)),
               SizedBox(height: 2.h,),
               SizedBox(
                 width: 100.w,

@@ -14,19 +14,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => Sizer(builder: (context, orientation, deviceType) =>
        MaterialApp(
          debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.light,
-        title: 'Flutter Demo',
-        darkTheme: ThemeData(
-          colorScheme: darkColorScheme,
-          useMaterial3: true,
-        ),
-        theme: ThemeData(
-          colorScheme: lightColorScheme,
-          useMaterial3: true,
-        ),
-        home: const MainScreen(),
+         themeMode: ThemeMode.light,
+         title: 'Flutter Demo',
+         darkTheme: ThemeData(
+           colorScheme: darkColorScheme,
+           useMaterial3: true,
+         ),
+         theme: ThemeData(
+           colorScheme: lightColorScheme,
+           useMaterial3: true,
+          ),
+         home: const MainScreen(),
       )
-
     );
 
 

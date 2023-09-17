@@ -35,7 +35,9 @@ String getElementType(String element) {
   if (element == 'Physical') {
     return 'images/elements/physical_icon_white.png';
   } else if (element == 'Lightning') {
-    return 'Meong';
+    return 'images/elements/lightning_icon_white.png';
+  } else if (element == 'Fire') {
+  return 'images/elements/fire_icon_white.png';
   } else {
     return 'Not Defined / Wrong :<';
   }

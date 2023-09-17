@@ -30,6 +30,7 @@ class _CardImageState extends State<CardImage> {
             child: Image.asset(
               widget.imagePath,
               alignment: Alignment.bottomCenter,
+              fit: BoxFit.contain,
             )
         ),
       ),
