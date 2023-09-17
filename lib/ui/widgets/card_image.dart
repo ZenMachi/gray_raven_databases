@@ -27,7 +27,11 @@ class _CardImageState extends State<CardImage> {
         width: widget.width,
         child: ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Image.asset(widget.imagePath)),
+            child: Image.asset(
+              widget.imagePath,
+              alignment: Alignment.bottomCenter,
+            )
+        ),
       ),
     );
   }

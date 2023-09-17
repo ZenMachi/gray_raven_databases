@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gray_raven_databases/data/local/data_dummy.dart';
+import 'package:gray_raven_databases/ui/widgets/button_favorite.dart';
 import 'package:gray_raven_databases/ui/widgets/card_image.dart';
 import 'package:gray_raven_databases/ui/widgets/card_information.dart';
 import 'package:gray_raven_databases/ui/widgets/chara_name.dart';
@@ -20,38 +21,52 @@ class _DetailScreenMobileState extends State<DetailScreenMobile> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: SafeArea(
-          child: Container(
+          child: Padding(
             padding: EdgeInsets.only(left: 14, right: 14, top: 18),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CharaName(name: widget.chara.name, variant: widget.chara.variant),
+                CharaName(name: widget.chara.name, variant: widget.chara.variant, padding: 8,),
                 SizedBox(height: 14,),
                 Stack(
                     children: [
                       CardImage(imagePath: widget.chara.image, width: 100.w, height: 40.h),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SizedBox(height: 1,),
-                          Container(
-                              padding: EdgeInsets.symmetric(horizontal: 2.w,vertical: 2.h),
-                              child: ElementBadge(element: widget.chara.element)),
-                        ],
+                      Container(
+                        height: 40.h,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(height: 1,),
+                                Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 2.w,vertical: 2.h),
+                                    child: ElementBadge(element: widget.chara.element, mainAxisAlignment: MainAxisAlignment.center, )),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(height: 1,),
+                                Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 2.w,),
+                                    child: FavoriteButton(name: widget.chara.name, buttonSize: 36)),
+                              ],
+                            ),
+                          ],
+                        ),
                       )
                     ]
                 ),
                 SizedBox(height: 14,),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: widget.chara.gallery.map((item) =>
-                          CardImage(imagePath: item, width: 76, height: 76)
-                      ).toList(),
-                    ),
+                SizedBox(
+                  width: 100.w,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: widget.chara.gallery.map((item) =>
+                        CardImage(imagePath: item, width: 76.sp, height: 76.sp)
+                    ).toList(),
                   ),
                 ),
                 SizedBox(height: 14,),

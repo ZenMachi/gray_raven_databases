@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gray_raven_databases/ui/widgets/element_badge.dart';
 
-class CardInformation extends StatelessWidget {
-  const CardInformation({super.key, required this.info, required this.width, this.crossAxisAlignment = CrossAxisAlignment.start});
-  final String info;
+class CardElement extends StatelessWidget {
+  const CardElement({super.key, required this.width, required this.element, this.crossAxisAlignment = CrossAxisAlignment.start});
   final double width;
+  final String element;
   final CrossAxisAlignment crossAxisAlignment;
 
   @override
@@ -23,11 +24,10 @@ class CardInformation extends StatelessWidget {
         child: Column(
           crossAxisAlignment: crossAxisAlignment,
           children: [
-            Text('Information',
+            Text('Element',
               style: Theme.of(context).textTheme.titleLarge?.apply(color: Theme.of(context).colorScheme.onTertiaryContainer),),
             SizedBox(height: 4,),
-            Text(info,
-              style: Theme.of(context).textTheme.bodyMedium?.apply(color: Theme.of(context).colorScheme.onTertiaryContainer),)
+            ElementBadge(element: element, mainAxisAlignment: MainAxisAlignment.center,)
           ],
         ),
       ),

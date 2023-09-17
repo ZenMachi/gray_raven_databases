@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CharaName extends StatelessWidget {
-  const CharaName({super.key, required this.name, required this.variant});
+  const CharaName({super.key, required this.name, required this.variant, required this.padding});
   final String name;
   final String variant;
+  final double padding;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class CharaName extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(12))
           ),
           child: Container(
-            margin: EdgeInsets.all(8),
+            padding: EdgeInsets.all(padding),
             child: Text(name,
               style: Theme.of(context).textTheme.titleLarge?.apply(color: Theme.of(context).colorScheme.onPrimaryContainer),),
           ),
@@ -27,7 +28,7 @@ class CharaName extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(12))
           ),
           child: Container(
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.all(padding),
             child: Text(variant,
               style: Theme.of(context).textTheme.titleLarge?.apply(color: Theme.of(context).colorScheme.onPrimaryContainer),),
           ),
